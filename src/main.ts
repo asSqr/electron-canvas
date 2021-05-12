@@ -1,7 +1,4 @@
-import {
-  app,
-  BrowserWindow
-} from 'electron';
+import { app, BrowserWindow } from 'electron';
 import path from 'path';
 
 let win;
@@ -26,15 +23,15 @@ const createWindow = (): void => {
   // tsc でコンパイルするので、出力先の dist の相対パスで指定する。
   win.loadFile(path.join(__dirname, './index.html'));
 
-  if (process.argv.find((arg) => arg === '--debug')) {
-    win.webContents.openDevTools()
+  if (process.argv.find(arg => arg === '--debug')) {
+    win.webContents.openDevTools();
   }
 
   // ブラウザウィンドウを閉じたときのイベントハンドラ
   win.on('closed', () => {
     // 閉じたウィンドウオブジェクトにはアクセスできない
-    win = null
-  })
+    win = null;
+  });
 };
 
 // Electronの起動準備が終わったら、ウィンドウを作成する。

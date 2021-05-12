@@ -40,3 +40,4 @@ rules:
 
   no-console: 'off'
   semi: ['error', 'always']
+  require-jsdoc: 0
